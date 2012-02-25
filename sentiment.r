@@ -1,13 +1,13 @@
 
 # from http://jeffreybreen.wordpress.com/2011/07/04/twitter-text-mining-r-slides/
 # score.sentiment(c("i like cookies", "i hate spam", "simpsons are cool"))
-al3x.score.sentiment = function(sentences, good=NULL, bad=NULL, .progress='none') {  
+a.score.sentiment = function(sentences, good=NULL, bad=NULL, .progress='none') {  
   require(plyr)
   require(stringr)
 
   # load words from http://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
-  pos.words = scan('/dmg/r/positive-words.txt', what='character',comment.char=';')
-  neg.words = scan('/dmg/r/negative-words.txt', what='character',comment.char=';')
+  pos.words = scan('./positive-words.txt', what='character',comment.char=';')
+  neg.words = scan('./negative-words.txt', what='character',comment.char=';')
 
   # add more if needed
   pos.words = c(pos.words, good)

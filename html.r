@@ -1,5 +1,5 @@
 
-al3x.html = function (dir, file, title, func) {
+a.html = function (dir, file, title, func) {
   library(R2HTML)
   html = HTMLInitFile(dir, file, 
             useLaTeX=FALSE,

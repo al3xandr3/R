@@ -1,5 +1,5 @@
 
-al3x.skew = function (x, na.rm = FALSE) 
+a.skew = function (x, na.rm = FALSE) 
 {
   if (na.rm)    x <- x[!is.na(x)]             #remove missing values
   sum((x - mean(x))^3)/(length(x) * sd(x)^3)  #calculate skew   
@@ -8,7 +8,7 @@ al3x.skew = function (x, na.rm = FALSE)
 
 # general descriptive statistics 
 # basic stats after dropping non-numeric data
-al3x.describe = function (x, digits = 2,na.rm=TRUE)   
+a.describe = function (x, digits = 2,na.rm=TRUE)   
 {
   # first, define a local function
   valid = function(x) {      
@@ -21,7 +21,7 @@ al3x.describe = function (x, digits = 2,na.rm=TRUE)
     stats[1, 2] =  median(x,na.rm=na.rm  )
     stats[1, 3] =  min(x, na.rm=na.rm )
     stats[1, 4] =  max(x, na.rm=na.rm )
-    stats[1, 5] =  al3x.skew(x,na.rm=na.rm  )
+    stats[1, 5] =  a.skew(x,na.rm=na.rm  )
     stats[1, 6] =  valid(x )
     len = 1;
   } else  {
@@ -35,7 +35,7 @@ al3x.describe = function (x, digits = 2,na.rm=TRUE)
       stats[i, 2] =  median(x[,i],na.rm=na.rm  )
       stats[i, 3] =  min(x[,i], na.rm=na.rm )
       stats[i, 4] =  max(x[,i], na.rm=na.rm )
-      stats[i, 5] =  al3x.skew(x[,i],na.rm=na.rm  )
+      stats[i, 5] =  a.skew(x[,i],na.rm=na.rm  )
       stats[i, 6] =  valid(x[,i] )
       }
     }

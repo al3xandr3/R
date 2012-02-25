@@ -1,7 +1,7 @@
 
 # given a single vector, extract slope
-# > al3x.slope(c(2,3,4))
-al3x.slope = function (v_val) {
+# > a.slope(c(2,3,4))
+a.slope = function (v_val) {
   v_val = v_val[!is.na(v_val)] # clean the Na values
   dta = data.frame(y=v_val, x=seq(1, length(v_val)))
   mod = lm(y~x, dta)
@@ -9,9 +9,9 @@ al3x.slope = function (v_val) {
 }
 
 # given a single vector & value, predict
-# > al3x.predict(c(2,3,4), 5)
-# > al3x.predict(c(4,3,2), 5)
-al3x.predict = function (v_val, val) {
+# > a.predict(c(2,3,4), 5)
+# > a.predict(c(4,3,2), 5)
+a.predict = function (v_val, val) {
   v_val = v_val[!is.na(v_val)] # clean the Na values
   dta = data.frame(y=v_val, x=seq(1,length(v_val)))
   mod = lm(y~x, dta)

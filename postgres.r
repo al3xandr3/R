@@ -1,7 +1,7 @@
 
-# al3x.pg.query("al3x", "***", "jdbc:postgresql://192.168.0.1:5432/db-name",
+# a.pg.query("al3x", "***", "jdbc:postgresql://192.168.0.1:5432/db-name",
 #               "select * from tableA limit 10")
-al3x.pg.query = function (user, pass, conn, sql) {
+a.pg.query = function (user, pass, conn, sql) {
   library(RJDBC)
 
   drv = JDBC("org.postgresql.Driver",
