@@ -68,20 +68,21 @@ a.png = function (flname, aplot, ...) {
   dev.off()
 }
 
-# df = data.frame(dt=c("2011-10-10","2011-10-11","2011-10-12"),kg=c(2,1,4),bmi=c(2,5,4))
+# df = data.frame(dt=c(2011-10-10,2011-10-11,2011-10-12),kg=c(2,1,4),bmi=c(2,5,4))
 # a.spark(df, "dt")
 a.spark = function(df, pivot, date_range="1 days") {
-
+  a.lib("scales")
+  a.lib("ggplot2")
   mp = melt(df, id=c(pivot))
 
   ggplot(mp, aes_string(x=pivot)) +
     geom_line(aes(y=value)) + 
-    stat_smooth(aes(y=value),method="lm",se=FALSE,colour=alpha("blue",0.8),linetype=2, fullrange=TRUE) +
     facet_grid(variable ~ . , scales = "free") +
+    stat_smooth(aes(y=value),method="lm",se=FALSE,colour=alpha("blue",0.8),linetype=2, fullrange=TRUE) +    
     opts(axis.text.x=theme_text(angle=-65,hjust=0), 
          panel.border=theme_rect(linetype = 0),
          strip.text.y = theme_text(size=15, angle = 0),
          panel.background = theme_rect(size = 1, colour = "lightgray"),
         strip.background = theme_blank()) +
-    scale_x_date(name = "", major=date_range)
+    scale_x_date(name = "", minor_breaks = date_range)
 }

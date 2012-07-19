@@ -5,8 +5,9 @@
 a.lib = function (lib) {
   # if exists loads, else installs
   if (is.element(lib, installed.packages()[,1])) {
-    command = paste("library(",lib,")",sep="")
-    eval(eval(parse(text=command)))
+    command = paste("library(",lib,")", sep="")
+    #eval(eval(parse(text=command)))
+    eval(parse(text=command))
   } else {
     install.packages(lib, dep=T)
   }
@@ -28,9 +29,9 @@ a.load = function () {
   a.lib("RColorBrewer")
 
   #  my own
-  oldpwd = getwd()       # save current working dir
+  oldpwd = getwd()             # save current working dir
   setwd("~/Dropbox/my/dev/R/") # go to my r file folder
-  for (file in dir()) {  # load each .r found
+  for (file in dir()) {        # load each .r found
     if (substr(file, nchar(file)-1, nchar(file)+1) %in% c(".r", ".R"))
       source(file)
   }
@@ -39,6 +40,8 @@ a.load = function () {
 }
 
 # load my stuff
+options(sqldf.driver = "SQLite")
+options(gsubfn.engine = "R")
 a.load()
 
 .First = function(){
