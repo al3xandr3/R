@@ -17,6 +17,7 @@ a.lib = function (lib) {
 a.load = function () {
   
   # standard libs
+  a.lib("munsell")
   a.lib("ggplot2")
   a.lib("gridExtra")
   a.lib("doBy")
