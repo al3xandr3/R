@@ -9,7 +9,7 @@ a.lib = function (lib) {
     #eval(eval(parse(text=command)))
     eval(parse(text=command))
   } else {
-    install.packages(lib, dep=T)
+    install.packages(lib, dependencies = TRUE)
   }
 }
 
@@ -17,6 +17,8 @@ a.lib = function (lib) {
 a.load = function () {
   
   # standard libs
+  a.lib('knitr')
+  a.lib('xtable')
   a.lib("munsell")
   a.lib("ggplot2")
   a.lib("gridExtra")
