@@ -30,7 +30,10 @@ a.load = function () {
   a.lib("wordcloud")
   a.lib("tm")
   a.lib("RColorBrewer")
-  a.lib("xlsReadWrite")
+  a.lib("markdown")
+  a.lib("devtools")
+  a.lib("scales")
+  #a.lib("xlsReadWrite")
 
   #  my own
   oldpwd = getwd()             # save current working dir
