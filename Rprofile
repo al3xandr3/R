@@ -1,6 +1,6 @@
 
 # Load (.Rprofile):
-# source("~/Dropbox/my/dev/R/Rprofile")
+# source("~/../SkyDrive/my/dev/R/Rprofile") 
 
 a.lib = function (lib) {
   # if exists loads, else installs
@@ -37,7 +37,7 @@ a.load = function () {
 
   #  my own
   oldpwd = getwd()             # save current working dir
-  setwd("~/Dropbox/my/dev/R/") # go to my r file folder
+  setwd("~/../SkyDrive/my/dev/R/") # go to my r file folder
   for (file in dir()) {        # load each .r found
     if (substr(file, nchar(file)-1, nchar(file)+1) %in% c(".r", ".R"))
       source(file)
