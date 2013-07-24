@@ -49,6 +49,7 @@ a.load = function () {
 # load my stuff
 options(sqldf.driver = "SQLite")
 options(gsubfn.engine = "R")
+options(repos=structure(c(CRAN="http://cran.rstudio.com/")))
 a.load()
 
 .First = function(){
