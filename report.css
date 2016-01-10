@@ -18,6 +18,14 @@ img {
   padding: 0!important;
 }
 
+.highcharts-container {
+  margin-right:0.5em;
+  margin-bottom:1em;
+  box-shadow: 0 0 4px #CCCCCC;
+  clear: left;
+  padding: 0!important;
+}
+
 h1 {
   margin-bottom: 1.2em;
 }

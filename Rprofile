@@ -33,11 +33,15 @@ a.load = function () {
   a.lib("markdown")
   a.lib("devtools")
   a.lib("scales")
+  a.lib("RCurl")
   #a.lib("xlsReadWrite")
+
+  #install_github('rCharts', 'ramnathv')
+  a.lib( "rCharts" )
 
   #  my own
   oldpwd = getwd()             # save current working dir
-  setwd("~/../SkyDrive/my/dev/R/") # go to my r file folder
+  setwd("~/../DropBox/my/code/R/") # go to my r file folder
   for (file in dir()) {        # load each .r found
     if (substr(file, nchar(file)-1, nchar(file)+1) %in% c(".r", ".R"))
       source(file)
