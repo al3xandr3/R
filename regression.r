@@ -1,7 +1,7 @@
 
 # given a single vector, extract slope
 # > a.slope(c(2,3,4))
-a.slope = function (v_val) {
+my.slope = function (v_val) {
   v_val = v_val[!is.na(v_val)] # clean the Na values
   dta = data.frame(y=v_val, x=seq(1, length(v_val)))
   mod = lm(y~x, dta)
@@ -11,7 +11,7 @@ a.slope = function (v_val) {
 # given a single vector & value, predict
 # > a.predict(c(2,3,4), 5)
 # > a.predict(c(4,3,2), 5)
-a.predict = function (v_val, val) {
+my.predict = function (v_val, val) {
   v_val = v_val[!is.na(v_val)] # clean the Na values
   dta = data.frame(y=v_val, x=seq(1,length(v_val)))
   mod = lm(y~x, dta)

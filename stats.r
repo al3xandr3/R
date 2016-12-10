@@ -1,5 +1,5 @@
 
-a.skew = function (x, na.rm = FALSE) 
+my.skew = function (x, na.rm = FALSE) 
 {
   if (na.rm)    x <- x[!is.na(x)]             #remove missing values
   sum((x - mean(x))^3)/(length(x) * sd(x)^3)  #calculate skew   
@@ -8,7 +8,7 @@ a.skew = function (x, na.rm = FALSE)
 
 # general descriptive statistics 
 # basic stats after dropping non-numeric data
-a.describe = function (x, digits = 2,na.rm=TRUE)   
+my.describe = function (x, digits = 2,na.rm=TRUE)   
 {
   # first, define a local function
   valid = function(x) {      

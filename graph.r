@@ -1,6 +1,6 @@
 
 # from: http://al3xandr3.github.com/2011/02/05/weight-loss-predictor.html
-a.hist = function(mydata, mycolname) {
+my.hist = function(mydata, mycolname) {
   pl = ggplot(data = mydata)
   subvp = viewport(width=0.35, height=0.35, x=0.84, y=0.84)
 
@@ -18,7 +18,7 @@ a.hist = function(mydata, mycolname) {
   print(qqp, vp = subvp)
 }
 
-a.hist2 = function (v1, v2, name1, name2) {
+my.hist2 = function (v1, v2, name1, name2) {
   freeg = data.frame(value = v1)
   paidg = data.frame(value = v2)
   freeg$metric = name1
@@ -41,7 +41,7 @@ a.hist2 = function (v1, v2, name1, name2) {
   grid.arrange(p1, p2, nrow=2)
 }
 
-a.hist2.counts = function (v1, v2, name1, name2) {
+my.hist2.counts = function (v1, v2, name1, name2) {
   freeg = data.frame(value = v1)
   paidg = data.frame(value = v2)
   freeg$metric = name1
@@ -62,7 +62,7 @@ a.hist2.counts = function (v1, v2, name1, name2) {
 
 # a = plot(c(1,2,3,4))
 # a.png("~/Desktop/","plot.png",a)
-a.png = function (flname, aplot, ...) {
+my.png = function (flname, aplot, ...) {
   png(filename=flname, ...) 
   print(aplot)
   dev.off()
@@ -70,7 +70,7 @@ a.png = function (flname, aplot, ...) {
 
 # df = data.frame(dt=c(2011-10-10,2011-10-11,2011-10-12),kg=c(2,1,4),bmi=c(2,5,4))
 # a.spark(df, "dt")
-a.spark = function(df, pivot, date_range="1 days") {
+my.spark = function(df, pivot, date_range="1 days") {
   a.lib("scales")
   a.lib("ggplot2")
   mp = melt(df, id=c(pivot))

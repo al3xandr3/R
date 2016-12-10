@@ -1,6 +1,6 @@
 
-a.google.spreadsheet = function (key, verbose=FALSE) {
-  a.lib("RCurl")
+my.google.spreadsheet = function (key, verbose=FALSE) {
+  p_load("RCurl")
   tt = getForm("http://spreadsheets.google.com/spreadsheet/pub", 
                 hl ="en_GB",
                 key = key, 
@@ -11,7 +11,7 @@ a.google.spreadsheet = function (key, verbose=FALSE) {
 }
 
 # a.google.search.count("due on monday")
-a.google.search.count = function(search=NULL) {
+my.google.search.count = function(search=NULL) {
   a.lib("RJSONIO")
   fromJSON(getForm("http://ajax.googleapis.com/ajax/services/search/web",
     q =search, v = "1.0"))$responseData$cursor$estimatedResultCount

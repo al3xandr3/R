@@ -1,7 +1,7 @@
 
 # whats the value in X iterations, given the history delta?
 # mean(a.predict.in.iterationc(79, 7, c(0.1, -0.1, 0.2)))
-a.value.in.iterations = function(value, iterations, deltavector) {
+my.value.in.iterations = function(value, iterations, deltavector) {
 
   iter = function (value, iterations, deltavector) {
     for (i in 1:iterations) {
@@ -15,7 +15,7 @@ a.value.in.iterations = function(value, iterations, deltavector) {
 
 # how many iterations to value, given the history delta?
 # mean(a.iterations.to.value(75, 79, c(0.1, -0.1, -0.2)))
-a.iterations.to.value = function(target, current, deltavector) {
+my.iterations.to.value = function(target, current, deltavector) {
 
   iter = function (target, current, deltavector) {
     iteration = 0

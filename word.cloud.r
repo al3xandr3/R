@@ -1,7 +1,7 @@
 
 # d = word.freq(data.frame(c("I don't have an iPhone and I still want this Futurama Head in a Jar app", "ASTERIX Big Data stack for Semi-structured Data Management & Analysis: New, long-range project from #hadoop", "Automatic Summarization of Photo Collections: from high-dim space to multi-objective optimization on a 5D concept space", "Hackers! Join us this Friday for the next bitly hackathon, with tons of new data to play with", "Re: Detecting Fake Reviews and Reviewers. A page maintained by Bing Liu of @IllinoisCS is a good starting point #spam", "Big Data Furnace, a proposal from @MSFTResearch: servers as primary heat source for homes & offices #greencomputing", "Data from HTML tables: 2 papers on WebTables (tool to extract relational-style data from the web)")))
 
-a.word.freq = function (text.df) {
+my.word.freq = function (text.df) {
   library(tm) 
   library(wordcloud) 
   library(RColorBrewer) 
